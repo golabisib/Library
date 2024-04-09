@@ -17,18 +17,18 @@ function BookCard({data, handleLikedList}) {
 
     return (
     <div className={styles.card}>
-    <img src={image} alt={title} />
-    <div className={styles.info}>
-        <h3 >{title}</h3>
-        <p>{author}</p>
-        <div>
-            <span>{language}</span>
-            <span>{pages}</span>
+        <img src={image} alt={title} />
+        <div className={styles.info}>
+            <h3 >{title}</h3>
+            <p>{author}</p>
+            <div>
+                <span>{language}</span>
+                <span>{pages}</span>
+            </div>
         </div>
-    <button onClick={likeHandler}>
-        <IoIosHeart color={like ? "red" : "white"} fontSize="1.8rem"/>
-    </button>
-    </div>
+        <button onClick={likeHandler}>
+            <IoIosHeart color={like ? "red" : "white"} fontSize="1.8rem"/>
+        </button>
     </div>
   )
 }
