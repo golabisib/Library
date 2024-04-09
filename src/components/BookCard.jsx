@@ -4,11 +4,16 @@ import { IoIosHeart } from "react-icons/io";
 
 import styles from "./BookCard.module.css";
 
-function BookCard({ data : {title, author, image, language, pages }}) {
+
+function BookCard({data, handleLikedList}) {
+    const { title, author, image, language, pages } = data;
 
     const [like, setLike] = useState(false);
 
-    const likeHandler = () => {setLike(like => !like)};
+    const likeHandler = () => {
+        handleLikedList(data, like);
+        setLike((like) => !like);
+    };
 
     return (
     <div className={styles.card}>
@@ -29,7 +34,8 @@ function BookCard({ data : {title, author, image, language, pages }}) {
 }
 
 BookCard.propTypes = {
-  data: PropTypes.any
+  data: PropTypes.any,
+  handleLikedList: PropTypes.any
 }
 
 export default BookCard
